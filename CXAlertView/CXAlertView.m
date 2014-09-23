@@ -406,6 +406,13 @@ static BOOL __cx_statsu_prefersStatusBarHidden;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 80000
         if ([[UIScreen mainScreen] respondsToSelector:@selector(nativeBounds)]) {
             frame = [UIScreen mainScreen].nativeBounds;
+            UIInterfaceOrientation interfaceOrientation =  [[UIApplication sharedApplication] statusBarOrientation];
+            if (interfaceOrientation == UIInterfaceOrientationLandscapeLeft || interfaceOrientation == UIInterfaceOrientationLandscapeRight)
+            {
+                CGFloat width = frame.size.width;
+                frame.size.width = frame.size.height;
+                frame.size.height = width;
+            }
         }
         else {
             frame = [UIScreen mainScreen].bounds;
