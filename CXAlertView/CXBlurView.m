@@ -52,9 +52,9 @@
 #pragma mark - PB
 - (void)blur
 {
-    [UIView animateWithDuration:0.3 animations:^{
-        _backgroundView.alpha = 0.7;
-    }];
+    // [UIView animateWithDuration:0.3 animations:^{
+    //     _backgroundView.alpha = 0.7;
+    // }];
 }
 
 #pragma - PV
